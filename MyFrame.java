@@ -1,4 +1,3 @@
-
 import java.awt.Button;
 import java.awt.Frame;
 import java.awt.Label;
@@ -21,7 +20,7 @@ public MyFrame()
 	l   = new Label("Name");
     tf  = new TextField(5);
     tf2 = new TextField(5);
-    b   = new Button("+");
+    b   = new Button("Click here");
     p   = new Panel();
     output = new Label();
     b.addActionListener(new ActionListener(){
@@ -29,18 +28,16 @@ public MyFrame()
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			String data =tf.getText();
-			String iidata =tf2.getText();
-			
 			int idata=Integer.parseInt(data);
-			int bdata=Integer.parseInt(iidata);
+			int bdata=Integer.parseInt(data);
 			int outdata=idata+bdata;
 			output.setText(String.valueOf(outdata));
+			
 		}
     	
     });
     p.add(l);
-    p.add(tf);
-    p.add(tf2);
+    p.add(tf,tf2);
     p.add(b);
     p.add(output);
     add(p);
