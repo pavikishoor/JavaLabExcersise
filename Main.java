@@ -1,15 +1,54 @@
-import java.io.*;
+import java.util.*;
+
+ class Square extends Thread{
+	int num;
+	int square;
+	Square(int num)
+	{
+		this.num=num;
+	}
+		public void run(){
+			try{
+				Thread.sleep(1000);
+				}
+				catch(InterruptedException e)
+				{
+					System.out.println(" ");
+				}
+			square=num*num;
+			System.out.println(num+" Square is "+square);	
+	}
+}
+  
+class Cube extends Thread{
+	
+	int num;
+	int square;
+	Cube(int num)
+	{
+		this.num=num;
+	}
+		public void run(){
+			try{
+				Thread.sleep(1000);
+				}
+				catch(InterruptedException e)
+				{
+					System.out.println(" ");
+				}
+			square=num*num*num;
+			System.out.println(num+" Square is "+square);
+			
+		
+	}
+}
+
+
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("Area Calculation \n");
-		
-		Rectangle r1=new Rectangle();
-		r1.printArea(2,4);
-		Triangle r2=new Triangle();
-		r2.printArea(2,4);
-		Circle r3=new Circle();
-		r3.printArea(2,4);
+		Random2 r2= new Random2();
+		r2.start();
 	}
 
 }
